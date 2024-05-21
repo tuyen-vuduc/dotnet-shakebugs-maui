@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using ShakeBugs;
 
 namespace ShakeMauiQs;
 
@@ -9,6 +10,7 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
+			.UseShakeBugs()
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
