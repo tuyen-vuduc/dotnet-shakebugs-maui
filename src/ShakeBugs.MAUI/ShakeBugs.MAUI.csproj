@@ -14,32 +14,28 @@
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
 	<PropertyGroup>
-		<PackageId>ShakeBugs.Maui</PackageId>
-		<Title>Mapbox SDK for .NET MAUI</Title>
-		<Summary>.NET MAUI control and APIs for Mapbox</Summary>
-		<Description>.NET MAUI control and APIs for Mapbox</Description>
+		<PackageId>ShakeBugs.MAUI</PackageId>
+		<Title>Shake SDK for .NET MAUI</Title>
+		<Summary>.NET MAUI control and APIs for Shake</Summary>
+		<Description>.NET MAUI control and APIs for Shake</Description>
 		<Authors>tuyen,tuyen-vuduc</Authors>
 		<Owners>tuyen,tuyen-vuduc</Owners>
 		<Copyright>© tuyen-vuduc. All rights reserved.</Copyright>
-		<RepositoryUrl>https://github.com/tuyen-vuduc/mapbox-maui</RepositoryUrl>
-		<PackageProjectUrl>https://mapbox.tuyen-vuduc.tech</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/tuyen-vuduc/dotnet-shakebugs-mauii</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/tuyen-vuduc/dotnet-shakebugs-maui</PackageProjectUrl>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-		<PackageVersion>11.2.0-alpha01</PackageVersion>
+		<PackageVersion>16.2.5</PackageVersion>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
-		<PackageIcon>tv-mapbox.png</PackageIcon>
+		<PackageIcon>icon.png</PackageIcon>
 	  </PropertyGroup>
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
 	<ItemGroup>
-		<None Include="../../../assets/tv-mapbox.png" Pack="True" PackagePath="tv-mapbox.png" />
-		<None Include="../../../LICENSE" Pack="True" PackagePath="" />
-		<None Include="../../../README.md" Pack="True" PackagePath="README.md" />
-
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
-		<PackageReference Include="Xamarin.Build.Download" Version="0.11.4" />
-		<PackageReference Include="GeoJSON.Text" Version="1.0.2" />
+		<None Include="../../assets/icon.png" Pack="True" PackagePath="icon.png" />
+		<None Include="../../LICENSE" Pack="True" PackagePath="" />
+		<None Include="../../README.md" Pack="True" PackagePath="" />
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.40" />

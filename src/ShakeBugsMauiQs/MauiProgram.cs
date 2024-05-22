@@ -10,7 +10,13 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
-			.UseShakeBugs()
+			.UseShakeBugs(
+				androidId: "YOUR_ANDROID_ID",
+				androidSecret: "YOUR_ANDROID_SECRETE",
+				iosId: "YOUR_IOS_ID",
+				iosSecret: "YOUR_IOS_SECRETE",
+				crashReportingEnabled: true
+			)
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

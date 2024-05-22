@@ -1,86 +1,37 @@
 # ShakeBugs for .NET MAUI
 
+[ShakeBugs](https://www.shakebugs.com/) is a service to help you engage closely with your users where your users can give you directly bug reports and improvements when your app is live on stores.
+
 ## Prerequisites
 
 - .NET 8
 - Visual Studio or Visual Studio Code
 - .NET workloads for .NET MAUI
 
-## Android
+## Steps to run the sample app
 
- This quick start is based on [the official quick start guide](https://developers.facebook.com/docs/facebook-login/android/) from Facebook. It will guide you how to use Facebook Android SDK binding libraries created by [tuyen-vuduc](https://github.com/tuyen-vuduc). The source of the binding libraries can be found [here](https://github.com/tuyen-vuduc/dotnet-binding-utils).
-
-### Steps to run the sample app
-
-1/ Create a Facebook app
-
-> NOTE: You can just use one of your existing apps
-
-2/ Navigate to the quickstart for Android platform
-
-```
-https://developers.facebook.com/apps/{YOUR_APP_ID}/fb-login/quickstart/?use_case_enum=FB_LOGIN
-```
-
-3/ Achieve the debug keystore's keyhash
-
-Mine is `Yntws4c3jc3MCvJ256RHPr/0T5k=`
-
-**On Windows**
-
-```bash
-keytool -exportcert -alias androiddebugkey -keystore "C:\Users\{YOUR_USER_NAME}\AppData\Local\Xamarin\Mono for Android\debug.keystore" | openssl sha1 -binary | openssl base64
+1/ Create a ShakeBugs app
+2/ Replace placeholders with your IDs and secrets
+```cs
+builder
+    ...
+    .UseShakeBugs(
+        androidId: "YOUR_ANDROID_ID",
+        androidSecret: "YOUR_ANDROID_SECRETE",
+        iosId: "YOUR_IOS_ID",
+        iosSecret: "YOUR_IOS_SECRETE",
+        crashReportingEnabled: true
+    )
+    ...;
 ```
 
-**On Mac
+## Steps to use in your app
 
+1/ Install the nuget package
 ```
-keytool -list -v -keystore ~/Library/Developer/Xamarin/Keystore/androiddebugkey/androiddebugkey.keystore -alias androiddebugkey -storepass android -keypass android  | openssl sha1 -binary | openssl base64
+<PackageReference Include="ShakeBugs.MAUI" Version="16.2.5" />
 ```
-
-4/ Add the generated keyhash to Facebook app dashboard and save
-
-5/ Define string resources for your app in `facebook_dev.xml`
-
-5.a/ File location
-
-```
-|--src
-    |-- Dotnet.Facebook.Android.QuickStart
-        |-- Resources
-            |-- values
-                |-- facebook_dev.xml
-```
-
-5.b/ File content
-
-```
-<resources>
-    <string name="facebook_app_id">YOUR_APP_ID</string>
-    <string name="fb_login_protocol_scheme">fbYOUR_APP_ID</string>
-    <string name="facebook_client_token">YOUR_APP_SECRET</string>    
-</resources>
-
-```
-
-6/ Run up and try out the sample app
-
-### Steps to use in your app
-
-1/ Add required NuGet packages
-
-> We need `Xamarin.Kotlin.StdLib.Jdk8` added directly because of version conflicts.
-
-```
-<PackageReference Include="Com.Facebook.Android.FacebookAndroidSdk" Version="17.0.0" />
-<PackageReference Include="Xamarin.Kotlin.StdLib.Jdk8" Version="1.9.23.1" />
-```
-
-2/ Add other required features and check out
-
-## iOS
-
-TBD
+2/ Call `UseShakeBugs` in your `MauiProgram.cs`
 
 ## MAINTAINER
 
@@ -96,12 +47,16 @@ OR
 
 ## LICENSE
 
-The 3rd libraries will follow their associated licenses. This project itself is licensed under MIT license.
+The 3rd libraries will follow their associated licenses. This project itself is licensed under The 3-Clause BSD License.
 
 Copyright 2024 tuyen-vuduc
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
