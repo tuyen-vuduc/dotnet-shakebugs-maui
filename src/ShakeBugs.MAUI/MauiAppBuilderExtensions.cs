@@ -19,7 +19,7 @@ public static class MauiAppBuilderExtensions
             && !string.IsNullOrWhiteSpace(androidSecret)) 
         {
             Shake.Start(
-                this,
+                Platform.CurrentActivity,
                 androidId,
                 androidSecret);
         }

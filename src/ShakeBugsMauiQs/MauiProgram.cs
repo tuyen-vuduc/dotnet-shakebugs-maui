@@ -11,10 +11,10 @@ public static class MauiProgram
 		builder
 			.UseMauiApp<App>()
 			.UseShakeBugs(
-				androidId: "YOUR_ANDROID_ID",
-				androidSecret: "YOUR_ANDROID_SECRETE",
-				iosId: "YOUR_IOS_ID",
-				iosSecret: "YOUR_IOS_SECRETE",
+				androidId: "LXpNiJmtFQf14i4JETcDJ8m4bsCEAHonolPiall2",
+				androidSecret: "osl3pxUKPQ75oAk3MWuIlQ6wg0ovI3pVWHYcEJiReCbBI2RMxfQjqXU",
+                iosId: "k5jbo7LrFWrDZKklJzDEaLmypWWqrF0wNz6RNnqv",
+				iosSecret: "AzEpJrnZTswcwreOUBRtL4LGYv26kOaWOGYWpz9IKPVBBXcfAC1AnrJ",
 				crashReportingEnabled: true
 			)
 			.ConfigureFonts(fonts =>
