@@ -43,13 +43,17 @@
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
-
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.40" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.40" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 	</ItemGroup>
-
+	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
+		<PackageReference Include="Com.Shakebugs.Shake" Version="16.2.5" />
+		<PackageReference Include="Org.Mp4parser.Muxer" Version="1.9.41.2" />
+		<PackageReference Include="Io.CoilKt.Coil" Version="2.0.0.2" />
+		<PackageReference Include="Io.CoilKt.CoilBase" Version="2.0.0.2" />
+	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\ShakeBugs.MAUI\ShakeBugs.MAUI.csproj" />
 	</ItemGroup>
