@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 25.0.1706.12
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShakeBugs.MAUI", "src\ShakeBugs.MAUI\ShakeBugs.MAUI.csproj", "{DF1A540B-698C-42F4-86DA-F0CD519D6279}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShakeBugs.MAUI", "src\ShakeBugs.MAUI\ShakeBugs.MAUI.csproj", "{DF1A540B-698C-42F4-86DA-F0CD519D6279}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShakeBugsMauiQs", "src\ShakeBugsMauiQs\ShakeBugsMauiQs.csproj", "{2B55E41B-5E3E-41CF-B86A-FB32C00DC0F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShakeBugsMauiQs", "src\ShakeBugsMauiQs\ShakeBugsMauiQs.csproj", "{2B55E41B-5E3E-41CF-B86A-FB32C00DC0F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +19,7 @@ Global
 		{DF1A540B-698C-42F4-86DA-F0CD519D6279}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2B55E41B-5E3E-41CF-B86A-FB32C00DC0F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2B55E41B-5E3E-41CF-B86A-FB32C00DC0F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B55E41B-5E3E-41CF-B86A-FB32C00DC0F4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{2B55E41B-5E3E-41CF-B86A-FB32C00DC0F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B55E41B-5E3E-41CF-B86A-FB32C00DC0F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
