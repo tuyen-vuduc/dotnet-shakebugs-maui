@@ -46,6 +46,7 @@
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 		<PackageReference Include="Com.Shakebugs.Shake" Version="16.2.5" />
 		<PackageReference Include="Org.Mp4parser.Muxer" Version="1.9.56" />
+		<PackageReference Include="Org.Slf4j.Slf4jApi" Version="1.8.0-beta4" />
 		<PackageReference Include="Xamarin.AndroidX.Fragment.Ktx" Version="1.7.0.2" />
 	</ItemGroup>
 
