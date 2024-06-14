@@ -40,8 +40,8 @@
 		<None Include="../../README.md" Pack="True" PackagePath="" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.60" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.60" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.40" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.40" />
 	</ItemGroup>
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 		<PackageReference Include="Com.Shakebugs.Shake" Version="16.2.5" />
