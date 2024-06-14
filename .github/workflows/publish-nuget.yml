@@ -29,6 +29,11 @@ jobs:
       with:
         distribution: 'microsoft'
         java-version: '11'
+        
+    - name: Xcode Select Version
+      uses: mobiledevops/xcode-select-version-action@v1
+      with:
+        xcode-select-version: 15.1
   
     - name: Build
       run: |
