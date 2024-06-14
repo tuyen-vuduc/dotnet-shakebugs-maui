@@ -23,7 +23,7 @@
 		<Authors>tuyen,tuyen-vuduc</Authors>
 		<Owners>tuyen,tuyen-vuduc</Owners>
 		<Copyright>© tuyen-vuduc. All rights reserved.</Copyright>
-		<RepositoryUrl>https://github.com/tuyen-vuduc/dotnet-shakebugs-mauii</RepositoryUrl>
+		<RepositoryUrl>https://github.com/tuyen-vuduc/dotnet-shakebugs-maui</RepositoryUrl>
 		<PackageProjectUrl>https://github.com/tuyen-vuduc/dotnet-shakebugs-maui</PackageProjectUrl>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<PackageVersion>16.2.5</PackageVersion>
