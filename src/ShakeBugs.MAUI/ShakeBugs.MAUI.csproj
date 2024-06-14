@@ -1,5 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
+	<Target Name="_CleanAarOutputPath" AfterTargets="_CreateAar" BeforeTargets="_IncludeAarInNuGetPackage">
+	  <Delete Files="$(_AarOutputPath)" />
+	</Target>
 	<PropertyGroup>
 		<TargetFrameworks>net8.0-android;net8.0-ios;</TargetFrameworks>
 		<UseMaui>true</UseMaui>
@@ -38,14 +40,13 @@
 		<None Include="../../README.md" Pack="True" PackagePath="" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.40" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.40" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.60" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.60" />
 	</ItemGroup>
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 		<PackageReference Include="Com.Shakebugs.Shake" Version="16.2.5" />
-		<PackageReference Include="Org.Mp4parser.Muxer" Version="1.9.41.2" />
-		<PackageReference Include="Io.CoilKt.Coil" Version="2.0.0.2" />
-		<PackageReference Include="Io.CoilKt.CoilBase" Version="2.0.0.2" />
+		<PackageReference Include="Org.Mp4parser.Muxer" Version="1.9.56" />
+		<PackageReference Include="Xamarin.AndroidX.Fragment.Ktx" Version="1.7.0.2" />
 	</ItemGroup>
 
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">

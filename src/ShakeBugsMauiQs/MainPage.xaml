@@ -13,12 +13,12 @@
                 SemanticProperties.Description="dot net bot in a race car number eight" />
 
             <Label
-                Text="Hello, World!"
+                Text="Hello, ShakeBugs!"
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
 
             <Label
-                Text="Welcome to &#10;.NET Multi-platform App UI"
+                Text="Please shake your device to see how ShakeBugs works"
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />

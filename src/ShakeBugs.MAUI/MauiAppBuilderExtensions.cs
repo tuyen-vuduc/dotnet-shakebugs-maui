@@ -1,6 +1,8 @@
 #if __ANDROID__
 using Com.Shakebugs.Shake;
+using Microsoft.Maui.LifecycleEvents;
 #elif __IOS__
+using Microsoft.Maui.LifecycleEvents;
 using Shake;
 #endif
 
@@ -8,6 +10,7 @@ namespace ShakeBugs;
 
 public static class MauiAppBuilderExtensions
 {
+    private static bool initialized = false;
     public static MauiAppBuilder UseShakeBugs(
         this MauiAppBuilder builder,
         string? androidId = default, string? androidSecret = default,
@@ -16,21 +19,49 @@ public static class MauiAppBuilderExtensions
     {
 #if __ANDROID__
         if (!string.IsNullOrWhiteSpace(androidId)
-            && !string.IsNullOrWhiteSpace(androidSecret)) 
+            && !string.IsNullOrWhiteSpace(androidSecret))
         {
-            Shake.Start(
-                Platform.CurrentActivity,
-                androidId,
-                androidSecret);
+            builder.ConfigureLifecycleEvents(lifeCycle =>
+            {
+                lifeCycle.AddAndroid(alc =>
+                {
+                    alc.OnCreate((activity, bundle) =>
+                    {
+                        if (initialized) return;
+                        
+                        initialized = true;
+
+                        Shake.Start(
+                            activity,
+                            androidId,
+                            androidSecret);
+                    });
+                });
+            });
         }
+
         Shake.CrashReportingEnabled = crashReportingEnabled;
 #elif __IOS__
         if (!string.IsNullOrWhiteSpace(iosId)
-            && !string.IsNullOrWhiteSpace(iosSecret)) 
+            && !string.IsNullOrWhiteSpace(iosSecret))
         {
-            SHKShake.StartWithClientId(
-                iosId,
-                iosSecret);
+            builder.ConfigureLifecycleEvents(lifeCycle =>
+            {
+                lifeCycle.AddiOS(ilc =>
+                {
+                    ilc.OnActivated((app) =>
+                    {
+                        if (initialized) return;
+                        
+                        initialized = true;
+
+                        SHKShake.StartWithClientId(
+                            iosId,
+                            iosSecret);
+                    });
+                });
+            });
+
         }
         SHKShake.Configuration.IsCrashReportingEnabled = crashReportingEnabled;
 #endif

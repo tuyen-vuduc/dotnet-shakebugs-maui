@@ -10,7 +10,7 @@
 		<Nullable>enable</Nullable>
 
 		<!-- Display name -->
-		<ApplicationTitle>m.ShakeBugs</ApplicationTitle>
+		<ApplicationTitle>tv.ShkeBgs</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>dev.tuyentv.dotnet.maui.shakemauiqs</ApplicationId>
@@ -47,66 +47,27 @@
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>	
+	<ItemGroup>
+	  <Compile Include="..\ShakeBugs.MAUI\MauiAppBuilderExtensions.cs" Link="MauiAppBuilderExtensions.cs" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.40" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.40" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.60" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.60" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 	</ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)' == 'net8.0-android'">
+		<PackageReference Include="Xamarin.AndroidX.Fragment.Ktx">
+			<Version>1.7.0.2</Version>
+		</PackageReference>
+	</ItemGroup>
+	  
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
 		<PackageReference Include="Com.Shakebugs.Shake" Version="16.2.5" />
 		<PackageReference Include="Org.Mp4parser.Muxer" Version="1.9.56" />
-		<PackageReference Include="Io.CoilKt.Coil" Version="2.0.0.2" />
-		<PackageReference Include="Io.CoilKt.CoilBase" Version="2.0.0.2" />
 	</ItemGroup>
-	<ItemGroup>
-	  <ProjectReference Include="..\ShakeBugs.MAUI\ShakeBugs.MAUI.csproj" />
-	</ItemGroup>
-	<ItemGroup Condition="'$(TargetFramework)' == 'net8.0-android'">
-	  <PackageReference Include="Org.Jetbrains.Kotlin.KotlinParcelizeRuntime">
-	    <Version>1.9.10</Version>
-	  </PackageReference>
-	  <PackageReference Include="Org.Slf4j.Slf4jApi">
-	    <Version>1.8.0-beta4</Version>
-	  </PackageReference>
-	  <PackageReference Include="Xamarin.AndroidX.Activity">
-	    <Version>1.9.0.1</Version>
-	  </PackageReference>
-	  <PackageReference Include="Xamarin.AndroidX.Activity.Ktx">
-	    <Version>1.9.0.1</Version>
-	  </PackageReference>
-	  <PackageReference Include="Xamarin.AndroidX.AppCompat">
-	    <Version>1.6.1.8</Version>
-	  </PackageReference>
-	  <PackageReference Include="Xamarin.AndroidX.Collection">
-	    <Version>1.4.0.3</Version>
-	  </PackageReference>
-	  <PackageReference Include="Xamarin.AndroidX.Collection.Ktx">
-	    <Version>1.4.0.2</Version>
-	  </PackageReference>
-	  <PackageReference Include="Xamarin.AndroidX.Core">
-	    <Version>1.13.1</Version>
-	  </PackageReference>
-	  <PackageReference Include="Xamarin.AndroidX.Lifecycle.Common">
-	    <Version>2.7.0.2</Version>
-	  </PackageReference>
-	  <PackageReference Include="Xamarin.AndroidX.Lifecycle.Runtime.Ktx">
-	    <Version>2.7.0.2</Version>
-	  </PackageReference>
-	  <PackageReference Include="Xamarin.AndroidX.Lifecycle.ViewModel">
-	    <Version>2.7.0.2</Version>
-	  </PackageReference>
-	  <PackageReference Include="Xamarin.AndroidX.Lifecycle.ViewModel.Ktx">
-	    <Version>2.7.0.2</Version>
-	  </PackageReference>
-	  <PackageReference Include="Xamarin.AndroidX.Work.Runtime">
-	    <Version>2.9.0.2</Version>
-	  </PackageReference>
-	  <PackageReference Include="Xamarin.Kotlin.StdLib">
-	    <Version>1.9.23.1</Version>
-	  </PackageReference>
-	  <PackageReference Include="Xamarin.Kotlin.StdLib.Jdk8">
-	    <Version>1.9.23.1</Version>
-	  </PackageReference>
+
+	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
+		<PackageReference Include="Shake.iOS" Version="16.2.5" />
 	</ItemGroup>
 </Project>
