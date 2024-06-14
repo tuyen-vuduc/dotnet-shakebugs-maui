@@ -10,7 +10,7 @@
 
 ## Steps to run the sample app
 
-1/ Create a ShakeBugs app
+1/ Open `dotnet-shake-maui.sln` file
 2/ Replace placeholders with your IDs and secrets
 ```cs
 builder
