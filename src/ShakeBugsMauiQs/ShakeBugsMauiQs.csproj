@@ -10,10 +10,10 @@
 		<Nullable>enable</Nullable>
 
 		<!-- Display name -->
-		<ApplicationTitle>tv.ShkeBgs</ApplicationTitle>
+		<ApplicationTitle>tv.ShakeQ</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>dev.tuyentv.dotnet.maui.quickstart.shakebugs</ApplicationId>
+		<ApplicationId>dev.tuyentv.quickstart.dotnet.maui.shakebugs</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
