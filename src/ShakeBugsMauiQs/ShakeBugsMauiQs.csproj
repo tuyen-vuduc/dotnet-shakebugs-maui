@@ -10,10 +10,10 @@
 		<Nullable>enable</Nullable>
 
 		<!-- Display name -->
-		<ApplicationTitle>tv.ShkeBgs</ApplicationTitle>
+		<ApplicationTitle>tv.ShakeQ</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>dev.tuyentv.dotnet.maui.quickstart.shakebugs</ApplicationId>
+		<ApplicationId>dev.tuyentv.quickstart.dotnet.maui.shakebugs</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
@@ -58,11 +58,11 @@
 	</ItemGroup>
 	  
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
-		<PackageReference Include="Com.Shakebugs.Shake" Version="16.2.5" />
+		<PackageReference Include="Com.Shakebugs.Shake" Version="17.0.0" />
 		<PackageReference Include="Org.Mp4parser.Muxer" Version="1.9.56" />
 	</ItemGroup>
 
 	<ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
-		<PackageReference Include="Shake.iOS" Version="16.2.5" />
+		<PackageReference Include="Shake.iOS" Version="17.0.0" />
 	</ItemGroup>
 </Project>

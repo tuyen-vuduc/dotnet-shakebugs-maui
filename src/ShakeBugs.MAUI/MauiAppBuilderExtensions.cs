@@ -13,13 +13,12 @@ public static class MauiAppBuilderExtensions
     private static bool initialized = false;
     public static MauiAppBuilder UseShakeBugs(
         this MauiAppBuilder builder,
-        string? androidId = default, string? androidSecret = default,
-        string? iosId = default, string? iosSecret = default,
+        string? androidApiKey,
+        string? iosApiKey,
         bool crashReportingEnabled = true)
     {
 #if __ANDROID__
-        if (!string.IsNullOrWhiteSpace(androidId)
-            && !string.IsNullOrWhiteSpace(androidSecret))
+        if (!string.IsNullOrWhiteSpace(androidApiKey))
         {
             builder.ConfigureLifecycleEvents(lifeCycle =>
             {
@@ -33,8 +32,7 @@ public static class MauiAppBuilderExtensions
 
                         Shake.Start(
                             activity,
-                            androidId,
-                            androidSecret);
+                            androidApiKey);
                     });
                 });
             });
@@ -42,8 +40,7 @@ public static class MauiAppBuilderExtensions
 
         Shake.CrashReportingEnabled = crashReportingEnabled;
 #elif __IOS__
-        if (!string.IsNullOrWhiteSpace(iosId)
-            && !string.IsNullOrWhiteSpace(iosSecret))
+        if (!string.IsNullOrWhiteSpace(iosApiKey))
         {
             builder.ConfigureLifecycleEvents(lifeCycle =>
             {
@@ -55,9 +52,8 @@ public static class MauiAppBuilderExtensions
                         
                         initialized = true;
 
-                        SHKShake.StartWithClientId(
-                            iosId,
-                            iosSecret);
+                        SHKShake.StartWithApiKey(
+                            iosApiKey);
                     });
                 });
             });

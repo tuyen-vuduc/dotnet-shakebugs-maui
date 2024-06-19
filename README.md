@@ -16,10 +16,8 @@
 builder
     ...
     .UseShakeBugs(
-        androidId: "YOUR_ANDROID_ID",
-        androidSecret: "YOUR_ANDROID_SECRETE",
-        iosId: "YOUR_IOS_ID",
-        iosSecret: "YOUR_IOS_SECRETE",
+        androidApiKey: "YOUR_ANDROID_API_KEY",
+        iosApiKey: "YOUR_IOS_API_KEY",
         crashReportingEnabled: true
     )
     ...;
@@ -29,7 +27,7 @@ builder
 
 1/ Install the nuget package
 ```
-<PackageReference Include="ShakeBugs.MAUI" Version="16.2.5" />
+<PackageReference Include="ShakeBugs.MAUI" Version="17.0.0" />
 ```
 2/ Call `UseShakeBugs` in your `MauiProgram.cs`
 
